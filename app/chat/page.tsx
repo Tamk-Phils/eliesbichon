@@ -113,7 +113,7 @@ export default function ChatPage() {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    userId: "ADMIN_USER_ID", // We need a way to target the admin. 
+                    userId: "ADMINS", // Targets all users with 'admin' role
                     // Better: The API should handle "notify admins" if a special flag is passed.
                     // For now, let's use a generic message and the backend can route it.
                     message: `New message from ${user.email}: ${content.slice(0, 80)}`
