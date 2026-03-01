@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream-50: #FCFBF8;
+  --color-cream-100: #F9F6EE;
+  --color-cream-200: #F1EBD8;
+  --color-sand-400: #D4C49A;
+  --color-sand-500: #C2B280;
+  --color-sand-600: #A89B6D;
+  --color-sand-700: #8E7F58;
+  --color-brown-700: #6D4C41;
+  --color-brown-800: #4E342E;
+  --color-brown-900: #3E2723;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-brown-800);
+    background-color: var(--color-cream-50);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--color-brown-900);
+    line-height: 1.2;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out both;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--color-cream-100) 25%, var(--color-cream-200) 50%, var(--color-cream-100) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
