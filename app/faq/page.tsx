@@ -48,7 +48,7 @@ export default function FAQPage() {
             <section className="bg-cream-100 border-b border-cream-200 py-20 text-center">
                 <div className="max-w-2xl mx-auto px-4">
                     <p className="text-sm font-semibold text-sand-600 uppercase tracking-widest mb-3">FAQ</p>
-                    <h1 className="font-display text-5xl font-bold text-brown-900 mb-4">
+                    <h1 className="font-display text-4xl sm:text-5xl font-bold text-brown-900 mb-4">
                         Frequently Asked Questions
                     </h1>
                     <p className="text-brown-800/60 text-lg">

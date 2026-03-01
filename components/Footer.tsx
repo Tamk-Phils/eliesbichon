@@ -38,17 +38,17 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                     {/* Brand */}
                     <div>
-                        <div className="flex items-center gap-2 mb-4">
+                        <div className="flex items-center gap-2 mb-4 justify-center md:justify-start">
                             <PawPrint className="w-6 h-6 text-sand-500" />
                             <span className="font-display text-lg font-semibold text-cream-50">
                                 Ellie&apos;s Bichon Frise
                             </span>
                         </div>
-                        <p className="text-sm text-cream-200/70 mb-4 leading-relaxed">
+                        <p className="text-sm text-cream-200/70 mb-4 leading-relaxed text-center md:text-left">
                             Raising happy, healthy Bichon Frise puppies with love and dedication.
                             Your forever companion awaits.
                         </p>
-                        <div className="space-y-2">
+                        <div className="space-y-2 flex flex-col items-center md:items-start">
                             <div className="flex items-center gap-2 text-sm text-cream-200/70">
                                 <Mail className="w-4 h-4 text-sand-500 shrink-0" />
                                 <span>adminsupport@eliesbichon.com</span>
@@ -63,10 +63,10 @@ export default function Footer() {
                     {/* Links */}
                     {footerSections.map((section) => (
                         <div key={section.title}>
-                            <h4 className="font-semibold text-cream-50 mb-4 text-sm uppercase tracking-wide">
+                            <h4 className="font-semibold text-cream-50 mb-4 text-sm uppercase tracking-wide text-center md:text-left">
                                 {section.title}
                             </h4>
-                            <ul className="space-y-2">
+                            <ul className="space-y-2 text-center md:text-left">
                                 {section.links.map((link) => (
                                     <li key={link.href}>
                                         <Link

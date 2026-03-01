@@ -50,7 +50,7 @@ export default function CareAndTrainingPage() {
         <div className="min-h-screen bg-cream-50">
             <section className="bg-cream-100 border-b border-cream-200 py-20 text-center">
                 <div className="max-w-2xl mx-auto px-4">
-                    <h1 className="font-display text-5xl font-bold text-brown-900 mb-4">Care & Training</h1>
+                    <h1 className="font-display text-4xl sm:text-5xl font-bold text-brown-900 mb-4">Care & Training</h1>
                     <p className="text-brown-800/60 text-lg">
                         A guide to keeping your Bichon Frise happy, healthy, and well-behaved.
                     </p>

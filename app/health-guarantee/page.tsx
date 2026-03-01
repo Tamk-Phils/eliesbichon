@@ -22,7 +22,7 @@ export default function HealthGuaranteePage() {
                     <div className="w-16 h-16 rounded-2xl bg-sand-500/15 flex items-center justify-center mx-auto mb-6">
                         <Shield className="w-8 h-8 text-sand-600" />
                     </div>
-                    <h1 className="font-display text-5xl font-bold text-brown-900 mb-4">Health Guarantee</h1>
+                    <h1 className="font-display text-4xl sm:text-5xl font-bold text-brown-900 mb-4">Health Guarantee</h1>
                     <p className="text-brown-800/60 text-lg">
                         We stand behind the health of every puppy we raise. Your peace of mind is our promise.
                     </p>

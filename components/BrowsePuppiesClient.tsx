@@ -65,9 +65,9 @@ export default function BrowsePuppiesClient() {
         <div>
             {/* Filters Bar */}
             <div className="sticky top-16 z-10 bg-cream-50/95 backdrop-blur-md border-b border-cream-200 py-4">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap gap-3 items-center">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap gap-2 sm:gap-3 items-center">
                     {/* Search */}
-                    <div className="relative flex-1 min-w-48">
+                    <div className="relative flex-1 min-w-[280px] sm:min-w-48">
                         <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-brown-800/40" />
                         <input
                             type="text"
@@ -83,9 +83,9 @@ export default function BrowsePuppiesClient() {
                             <button
                                 key={s}
                                 onClick={() => setStatusFilter(s)}
-                                className={`px-3 py-1 rounded text-xs font-medium capitalize transition-colors ${statusFilter === s
-                                        ? "bg-sand-600 text-cream-50 shadow-sm"
-                                        : "text-brown-800/70 hover:text-brown-900"
+                                className={`px-3 sm:px-4 py-1.5 sm:py-1 rounded text-xs font-medium capitalize transition-colors ${statusFilter === s
+                                    ? "bg-sand-600 text-cream-50 shadow-sm"
+                                    : "text-brown-800/70 hover:text-brown-900"
                                     }`}
                             >
                                 {s}
@@ -98,9 +98,9 @@ export default function BrowsePuppiesClient() {
                             <button
                                 key={g}
                                 onClick={() => setGenderFilter(g)}
-                                className={`px-3 py-1 rounded text-xs font-medium capitalize transition-colors ${genderFilter === g
-                                        ? "bg-sand-600 text-cream-50 shadow-sm"
-                                        : "text-brown-800/70 hover:text-brown-900"
+                                className={`px-3 sm:px-4 py-1.5 sm:py-1 rounded text-xs font-medium capitalize transition-colors ${genderFilter === g
+                                    ? "bg-sand-600 text-cream-50 shadow-sm"
+                                    : "text-brown-800/70 hover:text-brown-900"
                                     }`}
                             >
                                 {g}

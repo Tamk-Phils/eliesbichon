@@ -32,7 +32,7 @@ export default function ShippingPage() {
         <div className="min-h-screen bg-cream-50">
             <section className="bg-cream-100 border-b border-cream-200 py-20 text-center">
                 <div className="max-w-2xl mx-auto px-4">
-                    <h1 className="font-display text-5xl font-bold text-brown-900 mb-4">Shipping & Delivery</h1>
+                    <h1 className="font-display text-4xl sm:text-5xl font-bold text-brown-900 mb-4">Shipping & Delivery</h1>
                     <p className="text-brown-800/60 text-lg">
                         We never ship puppies in cargo. Every puppy travels with a dedicated escort.
                     </p>

@@ -32,7 +32,7 @@ export default function AboutPage() {
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <p className="text-sm font-semibold text-sand-600 uppercase tracking-widest mb-3">Our Story</p>
-                        <h1 className="font-display text-5xl sm:text-6xl font-bold text-brown-900 mb-6">
+                        <h1 className="font-display text-4xl sm:text-6xl font-bold text-brown-900 mb-6 line-tight">
                             About Ellie&apos;s Sanctuary
                         </h1>
                         <p className="text-lg text-brown-800/70 leading-relaxed">
@@ -41,11 +41,11 @@ export default function AboutPage() {
                         </p>
                     </div>
                     <div className="relative">
-                        <div className="rounded-3xl overflow-hidden h-72 lg:h-80 shadow-xl">
+                        <div className="rounded-3xl overflow-hidden aspect-[4/3] sm:h-80 shadow-xl">
                             <img src={BICHON.story} alt="Bichon Frise at the sanctuary" className="w-full h-full object-cover" />
                         </div>
-                        {/* Small inset */}
-                        <div className="absolute -bottom-4 -left-4 w-28 h-28 rounded-2xl overflow-hidden border-4 border-cream-50 shadow-lg">
+                        {/* Small inset - hidden on smallest screens */}
+                        <div className="absolute -bottom-4 -left-4 w-20 h-20 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-4 border-cream-50 shadow-lg hidden xs:block">
                             <img src={BICHON.gallery1} alt="Bichon Frise puppy" className="w-full h-full object-cover" />
                         </div>
                     </div>

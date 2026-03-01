@@ -85,7 +85,7 @@ export default function PuppyDetailsClient() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <div className="relative rounded-3xl overflow-hidden bg-cream-200 h-[420px] lg:h-[520px]">
+                        <div className="relative rounded-3xl overflow-hidden bg-cream-200 aspect-square sm:h-[480px] lg:h-[520px]">
                             {images.length > 0 ? (
                                 <img
                                     src={images[imgIdx]}
@@ -134,9 +134,9 @@ export default function PuppyDetailsClient() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <div className="flex items-start justify-between mb-2">
-                            <h1 className="font-display text-4xl sm:text-5xl font-bold text-brown-900">{puppy.name}</h1>
-                            <span className={`text-sm font-semibold px-3 py-1 rounded-full capitalize mt-2 ${statusColor}`}>
+                        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-2">
+                            <h1 className="font-display text-3xl sm:text-5xl font-bold text-brown-900">{puppy.name}</h1>
+                            <span className={`inline-block w-fit text-xs sm:text-sm font-semibold px-3 py-1 rounded-full capitalize ${statusColor}`}>
                                 {puppy.status}
                             </span>
                         </div>
