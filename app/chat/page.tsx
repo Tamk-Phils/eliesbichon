@@ -107,7 +107,19 @@ export default function ChatPage() {
             is_admin: false,
         });
 
-        if (error) {
+        if (!error && msgId) {
+            // Push notification to Admin
+            fetch("/api/push", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    userId: "ADMIN_USER_ID", // We need a way to target the admin. 
+                    // Better: The API should handle "notify admins" if a special flag is passed.
+                    // For now, let's use a generic message and the backend can route it.
+                    message: `New message from ${user.email}: ${content.slice(0, 80)}`
+                }),
+            }).catch(() => { });
+        } else if (error) {
             console.error("Error sending message:", error);
             // Remove optimistic message and restore input on failure
             setMessages(prev => prev.filter(m => m.id !== msgId));
@@ -120,7 +132,7 @@ export default function ChatPage() {
     if (loading) return <div className="min-h-screen bg-cream-50 flex items-center justify-center"><div className="skeleton w-32 h-8 rounded-lg" /></div>;
 
     return (
-        <div className="min-h-screen bg-cream-50 flex flex-col">
+        <div className="h-[calc(100vh-64px)] bg-cream-50 flex flex-col overflow-hidden">
             {/* Header */}
             <div className="bg-cream-100 border-b border-cream-200 px-4 sm:px-6 py-4">
                 <div className="max-w-2xl mx-auto flex items-center gap-3">
@@ -135,8 +147,8 @@ export default function ChatPage() {
             </div>
 
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto">
-                <div className="max-w-2xl mx-auto px-4 sm:px-6 py-6 space-y-4">
+            <div className="flex-1 overflow-y-auto min-h-0 bg-cream-50/30">
+                <div className="max-w-2xl mx-auto px-4 py-6 space-y-4">
                     {messages.length === 0 && (
                         <div className="text-center py-16 text-brown-800/40">
                             <MessageCircle className="w-10 h-10 mx-auto mb-3 opacity-30" />

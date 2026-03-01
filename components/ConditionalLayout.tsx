@@ -11,16 +11,14 @@ export default function ConditionalLayout({
 }) {
     const pathname = usePathname();
     const isAdmin = pathname?.startsWith("/admin");
-
-    if (isAdmin) {
-        return <>{children}</>;
-    }
+    const isChat = pathname === "/chat";
+    const hideFooter = isAdmin || isChat;
 
     return (
         <div className="flex flex-col min-h-screen">
             <Navbar />
             <main className="flex-1">{children}</main>
-            <Footer />
+            {!hideFooter && <Footer />}
         </div>
     );
 }

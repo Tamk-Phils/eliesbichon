@@ -39,7 +39,7 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 grid md:grid-cols-2 gap-10">
+            <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12 grid md:grid-cols-2 gap-8 md:gap-10">
                 {/* Contact info */}
                 <div>
                     <h2 className="font-display text-2xl font-bold text-brown-900 mb-6">Contact Information</h2>

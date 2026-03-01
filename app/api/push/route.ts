@@ -17,14 +17,24 @@ export async function POST(req: NextRequest) {
     try {
         const { userId, message } = await req.json();
 
-        if (!userId || !message) {
-            return NextResponse.json({ error: "Missing userId or message" }, { status: 400 });
+        let targetUserIds = [userId];
+
+        if (userId === "ADMINS") {
+            const { data: admins } = await supabaseAdmin
+                .from("users")
+                .select("id")
+                .eq("role", "admin");
+            targetUserIds = admins?.map(a => a.id) ?? [];
+        }
+
+        if (targetUserIds.length === 0) {
+            return NextResponse.json({ success: true, sent: 0 });
         }
 
         const { data: subs } = await supabaseAdmin
             .from("push_subscriptions")
             .select("subscription")
-            .eq("user_id", userId);
+            .in("user_id", targetUserIds);
 
         if (!subs || subs.length === 0) {
             return NextResponse.json({ success: true, sent: 0 });
