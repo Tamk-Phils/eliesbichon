@@ -53,18 +53,18 @@ export default function Navbar() {
     return (
         <header
             className={`sticky top-0 z-50 transition-all duration-300 ${scrolled
-                    ? "bg-cream-50/95 backdrop-blur-md shadow-sm border-b border-cream-200"
-                    : "bg-cream-50"
+                ? "bg-cream-50/95 backdrop-blur-md shadow-sm border-b border-cream-200"
+                : "bg-cream-50"
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2 group">
-                        <PawPrint className="w-7 h-7 text-sand-600 group-hover:text-sand-700 transition-colors" />
-                        <span className="font-display text-lg font-semibold text-brown-900 leading-tight">
+                    <Link href="/" className="flex items-center gap-1.5 group shrink-0">
+                        <PawPrint className="w-6 h-6 sm:w-7 sm:h-7 text-sand-600 group-hover:text-sand-700 transition-colors" />
+                        <span className="font-display text-base sm:text-lg font-semibold text-brown-900 leading-tight">
                             Ellie&apos;s<br />
-                            <span className="text-sand-600 text-sm font-normal">Bichon Frise Sanctuary</span>
+                            <span className="text-sand-600 text-[10px] sm:text-sm font-normal">Bichon Frise Sanctuary</span>
                         </span>
                     </Link>
 
@@ -75,8 +75,8 @@ export default function Navbar() {
                                 key={link.href}
                                 href={link.href}
                                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${pathname === link.href
-                                        ? "text-sand-600 bg-cream-100"
-                                        : "text-brown-800 hover:text-sand-600 hover:bg-cream-100"
+                                    ? "text-sand-600 bg-cream-100"
+                                    : "text-brown-800 hover:text-sand-600 hover:bg-cream-100"
                                     }`}
                             >
                                 {link.label}
@@ -186,8 +186,8 @@ export default function Navbar() {
                                 href={link.href}
                                 onClick={() => setMobileOpen(false)}
                                 className={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${pathname === link.href
-                                        ? "text-sand-600 bg-cream-100"
-                                        : "text-brown-800 hover:text-sand-600 hover:bg-cream-100"
+                                    ? "text-sand-600 bg-cream-100"
+                                    : "text-brown-800 hover:text-sand-600 hover:bg-cream-100"
                                     }`}
                             >
                                 {link.label}

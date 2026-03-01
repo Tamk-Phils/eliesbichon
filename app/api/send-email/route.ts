@@ -103,8 +103,16 @@ export async function POST(req: NextRequest) {
 </body>
 </html>` : "";
 
+    // Verify connection before sending
+    try {
+      await transporter.verify();
+    } catch (verifyError) {
+      console.error("SMTP Verification failed:", verifyError);
+      throw new Error("SMTP Configuration error");
+    }
+
     await transporter.sendMail({
-      from: `"${name}" <${process.env.SMTP_USER}>`,
+      from: process.env.SMTP_USER,
       to: process.env.SMTP_USER,
       replyTo: email,
       subject: subject ? `📬 ${subject} — from ${name}` : `📬 New enquiry from ${name}`,

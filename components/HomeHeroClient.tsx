@@ -18,64 +18,68 @@ const BICHON_PHOTOS = {
 
 export default function HomeHeroClient() {
     return (
-        <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-            {/* Background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-cream-100 via-cream-50 to-sand-400/20" />
-            {/* Decorative orbs */}
-            <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-sand-500/10 blur-3xl" />
-            <div className="absolute bottom-20 left-10 w-96 h-96 rounded-full bg-sand-400/10 blur-3xl" />
+        <section className="relative min-h-[95vh] flex items-center overflow-hidden">
+            {/* Background Image with Overlay */}
+            <div className="absolute inset-0">
+                <img
+                    src={BICHON_PHOTOS.hero}
+                    alt="Bichon Frise Sanctuary Background"
+                    className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-brown-900/90 via-brown-900/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-cream-50" />
+            </div>
 
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-16 items-center">
-                {/* Text */}
-                <div>
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 flex flex-col justify-center min-h-[95vh]">
+                <div className="max-w-2xl">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sand-500/15 text-sand-600 text-sm font-medium mb-6">
-                            <span className="w-1.5 h-1.5 rounded-full bg-sand-500 animate-pulse" />
-                            Puppies available now
+                        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sand-500/20 text-cream-50 text-sm font-medium mb-8 backdrop-blur-md border border-white/10">
+                            <span className="w-1.5 h-1.5 rounded-full bg-sand-400 animate-pulse" />
+                            Beautiful Puppies available now
                         </span>
                     </motion.div>
 
                     <motion.h1
-                        className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-brown-900 mb-6 leading-[1.1]"
+                        className="font-display text-4xl sm:text-7xl lg:text-8xl font-bold text-cream-50 mb-6 sm:mb-8 leading-[1.05]"
                         initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
                     >
                         Find Your Perfect{" "}
-                        <span className="text-sand-600">Bichon Frise</span> Companion
+                        <span className="text-sand-400">Bichon Frise</span> Companion
                     </motion.h1>
 
                     <motion.p
-                        className="text-lg text-brown-800/70 mb-8 leading-relaxed max-w-xl"
+                        className="text-lg sm:text-xl text-cream-100/80 mb-8 sm:mb-10 leading-relaxed max-w-xl"
                         initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        At Ellie&apos;s Sanctuary, we raise fluffy, cheerful Bichon Frise
-                        puppies with love, care, and dedication. Every puppy comes
-                        health-guaranteed and ready to become your forever family member.
+                        At Ellie&apos;s Sanctuary, we raise cheerful Bichon Frise
+                        puppies with love, care, and dedication. Healthy, socialized,
+                        and ready to become your forever companion.
                     </motion.p>
 
                     <motion.div
-                        className="flex flex-wrap gap-3"
+                        className="flex flex-wrap gap-4"
                         initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
                     >
                         <Link
                             href="/browse"
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-sand-600 hover:bg-sand-700 text-cream-50 font-semibold rounded-xl transition-all hover:shadow-lg hover:shadow-sand-600/25 active:scale-95"
+                            className="inline-flex items-center gap-3 px-8 py-4 bg-sand-500 hover:bg-sand-600 text-cream-50 font-bold rounded-2xl transition-all hover:shadow-2xl hover:shadow-sand-500/30 active:scale-95 text-lg"
                         >
                             Browse Puppies
-                            <ArrowRight className="w-4 h-4" />
+                            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                         </Link>
                         <Link
                             href="/about"
-                            className="inline-flex items-center gap-2 px-6 py-3 border border-cream-200 text-brown-800 font-semibold rounded-xl hover:bg-cream-100 hover:border-sand-400 transition-all"
+                            className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-cream-50 font-bold rounded-2xl hover:bg-white/20 transition-all text-lg"
                         >
                             Our Story
                         </Link>
@@ -83,75 +87,45 @@ export default function HomeHeroClient() {
 
                     {/* Stats */}
                     <motion.div
-                        className="flex flex-wrap gap-8 mt-12 pt-8 border-t border-cream-200"
+                        className="flex flex-wrap gap-10 mt-16 pt-10 border-t border-white/10"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.5 }}
                     >
                         {stats.map(({ icon: Icon, value, label }) => (
-                            <div key={label} className="flex items-center gap-2">
-                                <div className="w-9 h-9 rounded-lg bg-sand-500/15 flex items-center justify-center">
-                                    <Icon className="w-4 h-4 text-sand-600" />
+                            <div key={label} className="flex items-center gap-4">
+                                <div className="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/10">
+                                    <Icon className="w-6 h-6 text-sand-400" />
                                 </div>
-                                <div>
-                                    <div className="font-display font-bold text-brown-900">{value}</div>
-                                    <div className="text-xs text-brown-800/60">{label}</div>
+                                <div className="space-y-0.5">
+                                    <div className="font-display font-bold text-cream-50 text-xl">{value}</div>
+                                    <div className="text-sm text-cream-200/60 font-medium uppercase tracking-wider">{label}</div>
                                 </div>
                             </div>
                         ))}
                     </motion.div>
                 </div>
-
-                {/* Hero Image Area */}
-                <motion.div
-                    className="relative hidden lg:block"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.7, delay: 0.2 }}
-                >
-                    {/* Main hero image */}
-                    <div className="relative h-[520px] rounded-3xl overflow-hidden shadow-2xl">
-                        <img
-                            src={BICHON_PHOTOS.hero}
-                            alt="Adorable Bichon Frise puppy"
-                            className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-brown-900/30 to-transparent" />
-                    </div>
-
-                    {/* Inset photo top-left */}
-                    <motion.div
-                        className="absolute -top-4 -left-8 w-36 h-36 rounded-2xl overflow-hidden shadow-xl border-4 border-cream-50"
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.9 }}
-                    >
-                        <img
-                            src={BICHON_PHOTOS.inset}
-                            alt="Bichon Frise puppy close-up"
-                            className="w-full h-full object-cover"
-                        />
-                    </motion.div>
-
-                    {/* Floating badge */}
-                    <motion.div
-                        className="absolute -bottom-6 -left-6 bg-cream-50 rounded-2xl shadow-xl p-4 border border-cream-200"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.8 }}
-                    >
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full bg-sand-500/20 flex items-center justify-center">
-                                <Shield className="w-5 h-5 text-sand-600" />
-                            </div>
-                            <div>
-                                <div className="text-sm font-semibold text-brown-900">Health Guaranteed</div>
-                                <div className="text-xs text-brown-800/60">Every single puppy</div>
-                            </div>
-                        </div>
-                    </motion.div>
-                </motion.div>
             </div>
+
+            {/* Inset photo floating far right - decorative */}
+            <motion.div
+                className="absolute top-1/2 -right-20 -translate-y-1/2 hidden xl:block z-10"
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 0.4 }}
+            >
+                <div className="w-[400px] h-[550px] rounded-[40px] overflow-hidden border-[12px] border-white/5 backdrop-blur-xl shadow-2xl relative rotate-3">
+                    <img
+                        src={BICHON_PHOTOS.inset}
+                        alt="Bichon Frise puppy close-up"
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-[28px]" />
+                </div>
+            </motion.div>
+
+            {/* Decorative bottom fade */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-cream-50 to-transparent pointer-events-none" />
         </section>
     );
 }
