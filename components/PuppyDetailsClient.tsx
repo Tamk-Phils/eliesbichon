@@ -68,8 +68,32 @@ export default function PuppyDetailsClient() {
             puppy.status === "reserved" ? "bg-amber-100 text-amber-700" :
                 "bg-red-100 text-red-700";
 
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": puppy.name,
+        "description": puppy.description,
+        "image": images,
+        "offers": {
+            "@type": "Offer",
+            "price": puppy.fee,
+            "priceCurrency": "USD",
+            "availability": puppy.status === "available"
+                ? "https://schema.org/InStock"
+                : "https://schema.org/OutOfStock"
+        },
+        "brand": {
+            "@type": "Brand",
+            "name": "Ellie's Bichon Frise Sanctuary"
+        }
+    };
+
     return (
         <div className="min-h-screen bg-cream-50">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <Link
                     href="/browse"

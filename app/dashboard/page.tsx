@@ -53,10 +53,30 @@ export default function DashboardPage() {
             setNotifications((notifs as Notification[]) ?? []);
         }
         fetchData();
+
+        // Real-time subscriptions for multi-tab sync
+        const channel = supabase
+            .channel(`dashboard-${user.id}`)
+            .on(
+                "postgres_changes",
+                { event: "*", filter: `user_id=eq.${user.id}`, schema: "public", table: "adoption_requests" },
+                () => fetchData()
+            )
+            .on(
+                "postgres_changes",
+                { event: "*", filter: `user_id=eq.${user.id}`, schema: "public", table: "notifications" },
+                () => fetchData()
+            )
+            .subscribe();
+
+        return () => {
+            supabase.removeChannel(channel);
+        };
     }, [user]);
 
     const markRead = async (id: string) => {
         await supabase.from("notifications").update({ read: true }).eq("id", id);
+        // Optimistic update (handled by real-time sync as well)
         setNotifications((n) => n.map((x) => (x.id === id ? { ...x, read: true } : x)));
     };
 
