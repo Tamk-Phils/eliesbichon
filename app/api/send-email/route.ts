@@ -125,9 +125,9 @@ export async function POST(req: NextRequest) {
 </body>
 </html>` : "";
 
-    console.log("Sending email to:", process.env.SMTP_USER);
+    console.log("Sending email from:", process.env.SMTP_USER);
     await transporter.sendMail({
-      from: `Ellie's Sanctuary <${process.env.SMTP_USER}>`,
+      from: process.env.SMTP_USER, // Using raw email for max compatibility
       to: process.env.SMTP_USER,
       replyTo: email,
       subject: subject ? `📬 ${subject} — from ${name}` : `📬 New enquiry from ${name}`,
