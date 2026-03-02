@@ -38,8 +38,12 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                     {/* Brand */}
                     <div>
-                        <div className="flex items-center gap-2 mb-4 justify-center md:justify-start">
-                            <PawPrint className="w-6 h-6 text-sand-500" />
+                        <div className="flex items-center gap-3 mb-4 justify-center md:justify-start">
+                            <img
+                                src="/logo.png"
+                                alt="Ellie's Sanctuary Logo"
+                                className="w-8 h-8 sm:w-9 sm:h-9 object-contain brightness-0 invert opacity-90"
+                            />
                             <span className="font-display text-lg font-semibold text-cream-50">
                                 Ellie&apos;s Bichon Frise
                             </span>
