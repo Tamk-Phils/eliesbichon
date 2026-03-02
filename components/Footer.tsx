@@ -54,6 +54,10 @@ export default function Footer() {
                                 <span>adminsupport@eliesbichon.com</span>
                             </div>
                             <div className="flex items-center gap-2 text-sm text-cream-200/70">
+                                <Phone className="w-4 h-4 text-sand-500 shrink-0" />
+                                <span>(213) 849-3395</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm text-cream-200/70">
                                 <MapPin className="w-4 h-4 text-sand-500 shrink-0" />
                                 <span>United States</span>
                             </div>

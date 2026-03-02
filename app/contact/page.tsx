@@ -46,6 +46,7 @@ export default function ContactPage() {
                     <div className="space-y-4 mb-8">
                         {[
                             { icon: Mail, label: "Email", value: "adminsupport@eliesbichon.com" },
+                            { icon: Phone, label: "Phone", value: "(213) 849-3395" },
                         ].map(({ icon: Icon, label, value }) => (
                             <div key={label} className="flex items-center gap-4 p-4 bg-cream-100 border border-cream-200 rounded-xl">
                                 <div className="w-10 h-10 rounded-lg bg-sand-500/15 flex items-center justify-center shrink-0">
