@@ -7,7 +7,22 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Ellie's Bichon Frise Sanctuary — Find Your Perfect Companion",
   description:
-    "Raising happy, healthy Bichon Frise puppies with love and dedication. Find your forever companion today.",
+    "Raising happy, healthy, and AKC-registered Bichon Frise puppies with love and dedication. Browse our available puppies and find your forever companion today.",
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Ellie's Bichon Frise Sanctuary",
+  "image": "https://www.eliesbichon.com/logo.png",
+  "description": "Raising happy, healthy, AKC-registered Bichon Frise puppies with love and dedication.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  },
+  "email": "adminsupport@eliesbichon.com",
+  "telephone": "+12138493395",
+  "url": "https://www.eliesbichon.com"
 };
 
 const features = [
@@ -29,6 +44,10 @@ const GALLERY = [
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <HomeHeroClient />
 
       {/* Features strip */}

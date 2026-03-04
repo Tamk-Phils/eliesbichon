@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Scissors, Apple, BookOpen, Activity } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Care & Training",
-    description: "Everything you need to know about grooming, nutrition, and training your Bichon Frise.",
+    title: "Bichon Frise Care & Training Guide",
+    description: "Expert advice on grooming, nutrition, exercise, and training for your Bichon Frise. Learn how to keep your puppy happy, healthy, and well-behaved.",
 };
 
 const sections = [

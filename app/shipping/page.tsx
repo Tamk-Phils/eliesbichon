@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Truck, Plane, CheckCircle, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Shipping & Delivery",
-    description: "Information about how we safely transport your Bichon Frise puppy to your home.",
+    title: "Bichon Frise Puppy Shipping & Delivery Options",
+    description: "Learn how we safely transport your new Bichon Frise puppy to your home. We offer ground transport and flight nanny services across the US.",
 };
 
 const options = [

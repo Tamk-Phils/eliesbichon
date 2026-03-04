@@ -3,8 +3,8 @@ import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "FAQ",
-    description: "Frequently asked questions about adopting a Bichon Frise from Ellie's Sanctuary.",
+    title: "Frequently Asked Questions | Adoption Process & Prices",
+    description: "Find answers to all your questions about adopting a Bichon Frise puppy, our health guarantee, pricing, shipping options, and more.",
 };
 
 const faqs = [

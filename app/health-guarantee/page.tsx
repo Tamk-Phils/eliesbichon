@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Shield, AlertCircle, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Health Guarantee",
-    description: "Ellie's Bichon Frise Sanctuary's comprehensive health guarantee policy.",
+    title: "2-Year Health Guarantee for Bichon Frise Puppies",
+    description: "We stand behind the health of our puppies. Learn about our comprehensive 2-year genetic health guarantee, vaccinations, and veterinary care standards.",
 };
 
 const includes = [

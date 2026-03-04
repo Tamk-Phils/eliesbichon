@@ -4,6 +4,11 @@ import { useState } from "react";
 import type { Metadata } from "next";
 import { Mail, Phone, Send, CheckCircle } from "lucide-react";
 
+export const metadata: Metadata = {
+    title: "Contact Us | Ellie's Bichon Frise Sanctuary",
+    description: "Get in touch with Ellie's Bichon Frise Sanctuary. We'd love to answer your questions about our available puppies, the adoption process, and our health guarantee.",
+};
+
 export default function ContactPage() {
     const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
