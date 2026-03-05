@@ -108,17 +108,27 @@ export default function ChatPage() {
         });
 
         if (!error && msgId) {
-            // Push notification to Admin
+            // Push notification to Admin (best effort)
             fetch("/api/push", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     userId: "ADMINS", // Targets all users with 'admin' role
-                    // Better: The API should handle "notify admins" if a special flag is passed.
-                    // For now, let's use a generic message and the backend can route it.
                     message: `New message from ${user.email}: ${content.slice(0, 80)}`
                 }),
             }).catch(() => { });
+
+            // Reliable Fallback: Email notification to Admin
+            fetch("/api/send-email", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: user.email?.split('@')[0] || "User",
+                    email: user.email || "No email",
+                    subject: "New Chat Message from User",
+                    message: content
+                }),
+            }).catch(() => { console.error("Failed to send admin email alert"); });
         } else if (error) {
             console.error("Error sending message:", error);
             // Remove optimistic message and restore input on failure
