@@ -261,7 +261,7 @@ export default function DepositCheckoutPage() {
                         <h1 className="font-display text-3xl font-bold text-brown-900 mb-2">Adoption Application</h1>
                         <p className="text-brown-800/60 text-sm leading-relaxed">
                             Complete this form to apply for {puppy.name}. A $500 deposit is required to reserve your puppy.
-                            We accept Zelle, Chime, Apple Pay, PayPal, CashApp, and cash on delivery.
+                            We accept Zelle, Chime, Apple Pay, PayPal, and CashApp.
                         </p>
                     </div>
                 </div>
@@ -415,7 +415,6 @@ export default function DepositCheckoutPage() {
                                 { value: "apple_pay", label: "Apple Pay" },
                                 { value: "paypal", label: "PayPal" },
                                 { value: "cashapp", label: "CashApp" },
-                                { value: "cash_on_delivery", label: "Cash on Delivery" },
                             ].map(({ value, label }) => (
                                 <label key={value} className={`flex items-center justify-center gap-2 p-3 rounded-xl border cursor-pointer transition-colors ${form.payment_method === value ? "border-sand-500 bg-sand-500/10 text-sand-600 font-medium" : "border-cream-200 text-brown-800/70 hover:border-sand-400"}`}>
                                     <input type="radio" name="payment_method" value={value} checked={form.payment_method === value} onChange={(e) => set("payment_method", e.target.value)} className="sr-only" />
