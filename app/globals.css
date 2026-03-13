@@ -17,11 +17,27 @@
 }
 
 @layer base {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
   html {
     font-family: var(--font-sans);
     color: var(--color-brown-800);
     background-color: var(--color-cream-50);
     scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 
   h1, h2, h3, h4, h5, h6 {
